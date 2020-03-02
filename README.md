@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # CodeIgniter 4 Framework
 
 ## What is CodeIgniter?
@@ -61,3 +62,6 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 =======
 # codeigniter4_tutorial
 >>>>>>> 47e2a942b08fefc59a9350005f7097e376b803d5
+=======
+# codeigniter4_tutorial
+>>>>>>> c5df1e86776a52d3fe2fb76e4329129a1d198fa4
