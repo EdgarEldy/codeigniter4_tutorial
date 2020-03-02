@@ -1,7 +1,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CODEIGNITER TUTORIAL</title>
+<title>CODEIGNITER4 TUTORIAL</title>
 
 <link href="<?= base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
 <link href="<?= base_url('css/datepicker3.css') ?>" rel="stylesheet">
