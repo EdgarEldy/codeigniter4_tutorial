@@ -22,7 +22,9 @@ class CategoriesController extends Controller
     public function index()
     {
     $categories = $this->categoryModel->findAll();
-    return view('categories/index', ['categories' => $categories]);
+    return view('categories/index', [
+      'categories' => $categories
+    ]);
     }
 
     public function add()
@@ -38,17 +40,33 @@ class CategoriesController extends Controller
       'cat_name' => $cat_name
     ];
     $result = $this->categoryModel->save($data);
-    return view('categories/index');
+    return redirect('categories');
     }
 
-    public function edit()
+    public function edit($id)
     {
-
+      $category = $this->categoryModel->find($id);
+      return view('categories/edit',[
+        'category' => $category
+      ]);
     }
 
-    public function delete()
+    public function update()
     {
+      // code...
+      $id = $this->request->getPost('id');
+      $cat_name = $this->request->getPost('cat_name');
+      $data = [
+        'cat_name' => $cat_name
+      ];
+      $this->categoryModel->update($id, $data);
+      return redirect('categories');
+    }
 
+    public function delete($id)
+    {
+      $this->categoryModel->delete($id);
+      return redirect('categories');
     }
 
 }
