@@ -34,6 +34,9 @@ $routes->get('/', 'HomeController::index');
 $routes->get('categories', 'CategoriesController::index');
 $routes->get('categories/add','CategoriesController::add');
 $routes->post('categories/save','CategoriesController::save');
+$routes->get('categories/edit/(:any)','CategoriesController::edit/$1');
+$routes->post('categories/update','CategoriesController::update');
+$routes->post('categories/delete/(:any)','CategoriesController::delete/$1');
 
 /**
  * --------------------------------------------------------------------
