@@ -6,7 +6,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class CategoryModel extends Model
+class Category extends Model
 {
     protected $DBGroup = 'default';
     protected $table = 'categories';
