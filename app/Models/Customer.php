@@ -5,18 +5,18 @@ use CodeIgniter\Model;
 
 class Customer extends Model{
     protected $DBGroup = 'default';
-    protected $table      = 'customer';
+    protected $table      = 'customers';
         protected $primaryKey = 'id';
-
         protected $returnType = 'array';
-        protected $useSoftDeletes = true;
+        protected $useSoftDeletes = false;
 
-        protected $allowedFields = ['name', 'email'];
+        protected $allowedFields = ['first_name','last_name','email', 'tel','address'];
 
         protected $useTimestamps = false;
-        protected $createdField  = 'created_at';
-        protected $updatedField  = 'updated_at';
-        protected $deletedField  = 'deleted_at';
+
+        protected $createdField  = '';
+        protected $updatedField  = '';
+        protected $deletedField  = '';
 
         protected $validationRules    = [];
         protected $validationMessages = [];
