@@ -4,24 +4,24 @@
 namespace App\Controllers;
 
 
-use App\Models\CategoryModel;
+use App\Models\Category;
 use CodeIgniter\Controller;
 
 class CategoriesController extends Controller
 {
-    protected $categoryModel;
+    protected $category;
 
     /**
      * CategoriesController constructor.
      */
     public function __construct()
     {
-    $this->categoryModel = new CategoryModel();
+    $this->category = new Category();
     }
 
     public function index()
     {
-    $categories = $this->categoryModel->findAll();
+    $categories = $this->category->findAll();
     return view('categories/index', [
       'categories' => $categories
     ]);
@@ -39,13 +39,13 @@ class CategoriesController extends Controller
     $data = [
       'cat_name' => $cat_name
     ];
-    $result = $this->categoryModel->save($data);
+    $this->category->save($data);
     return redirect('categories');
     }
 
     public function edit($id)
     {
-      $category = $this->categoryModel->find($id);
+      $category = $this->category->find($id);
       return view('categories/edit',[
         'category' => $category
       ]);
@@ -59,13 +59,13 @@ class CategoriesController extends Controller
       $data = [
         'cat_name' => $cat_name
       ];
-      $this->categoryModel->update($id, $data);
+      $this->category->update($id, $data);
       return redirect('categories');
     }
 
     public function delete($id)
     {
-      $this->categoryModel->delete($id);
+      $this->category->delete($id);
       return redirect('categories');
     }
 
