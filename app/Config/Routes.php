@@ -38,6 +38,14 @@ $routes->get('categories/edit/(:any)','CategoriesController::edit/$1');
 $routes->post('categories/update','CategoriesController::update');
 $routes->post('categories/delete/(:any)','CategoriesController::delete/$1');
 
+//Customers
+$routes->get('customers', 'CustomersController::index');
+$routes->get('customers/add','CustomersController::add');
+$routes->post('customers/save','CustomersController::save');
+$routes->get('customers/edit/(:any)','CustomersController::edit/$1');
+$routes->post('customers/update','CustomersController::update');
+$routes->post('customers/delete/(:any)','CustomersController::delete/$1');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
