@@ -46,6 +46,14 @@ $routes->get('customers/edit/(:any)','CustomersController::edit/$1');
 $routes->post('customers/update','CustomersController::update');
 $routes->post('customers/delete/(:any)','CustomersController::delete/$1');
 
+//Products
+$routes->get('products', 'ProductsController::index');
+$routes->get('products/add','ProductsController::add');
+$routes->post('products/save','ProductsController::save');
+$routes->get('products/edit/(:any)','ProductsController::edit/$1');
+$routes->post('products/update','ProductsController::update');
+$routes->post('products/delete/(:any)','ProductsController::delete/$1');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
