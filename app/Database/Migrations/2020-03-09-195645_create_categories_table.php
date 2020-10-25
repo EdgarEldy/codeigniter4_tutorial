@@ -14,7 +14,7 @@ class CreateCategoriesTable extends Migration
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE
             ],
-            'cat_name' => [
+            'category_name' => [
                 'type' => 'VARCHAR',
                 'constraint' => '45'
             ]
