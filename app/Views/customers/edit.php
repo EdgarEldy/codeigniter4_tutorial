@@ -11,31 +11,61 @@
                         <label>First name</label>
                         <input type="text" name="first_name" class="form-control"
                                placeholder="" value="<?= $customer['first_name']; ?>">
-                        <span class="invalid-feedback"></span>
+                        <?php if (!empty($errors)): ?>
+                            <?php foreach ($errors as $field => $error) : ?>
+                                <div class="btn btn-danger">
+                                    <?= $error; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                     <div class="form-group">
                         <label>Last name</label>
                         <input type="text" name="last_name" class="form-control"
                                placeholder="" value="<?= $customer['last_name']; ?>">
-                        <span class="invalid-feedback"></span>
+                        <?php if (!empty($errors)): ?>
+                            <?php foreach ($errors as $field => $error) : ?>
+                                <div class="btn btn-danger">
+                                    <?= $error; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
                         <input type="text" name="email" class="form-control"
                                placeholder="" value="<?= $customer['email']; ?>">
-                        <span class="invalid-feedback"></span>
+                        <?php if (!empty($errors)): ?>
+                            <?php foreach ($errors as $field => $error) : ?>
+                                <div class="btn btn-danger">
+                                    <?= $error; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                     <div class="form-group">
                         <label>Tel</label>
                         <input type="text" name="tel" class="form-control"
                                placeholder="" value="<?= $customer['tel']; ?>">
-                        <span class="invalid-feedback"></span>
+                        <?php if (!empty($errors)): ?>
+                            <?php foreach ($errors as $field => $error) : ?>
+                                <div class="btn btn-danger">
+                                    <?= $error; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                     <div class="form-group">
                         <label>Address</label>
                         <input type="text" name="tel" class="form-control"
                                placeholder="" value="<?= $customer['tel']; ?>">
-                        <span class="invalid-feedback"></span>
+                        <?php if (!empty($errors)): ?>
+                            <?php foreach ($errors as $field => $error) : ?>
+                                <div class="btn btn-danger">
+                                    <?= $error; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                     <button type="submit" id="submit" class="btn btn-primary">Save</button>
                     <button type="reset" class="btn btn-default">Reset</button>

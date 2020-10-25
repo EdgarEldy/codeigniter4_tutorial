@@ -11,6 +11,13 @@
                         <label>Product category</label>
                         <input type="text" name="cat_name" class="form-control"
                                placeholder="" value="<?= $category['cat_name']; ?>">
+                        <?php if (!empty($errors)): ?>
+                            <?php foreach ($errors as $field => $error) : ?>
+                                <div class="btn btn-danger">
+                                    <?= $error; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                     <button type="submit" id="submit" class="btn btn-primary">Save</button>
                     <button type="reset" class="btn btn-default">Reset</button>

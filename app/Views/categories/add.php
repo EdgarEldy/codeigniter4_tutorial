@@ -10,7 +10,13 @@
                         <label>Category name :</label>
                         <input type="text" name="cat_name" class="form-control"
                                placeholder="" value="">
-                        <span class="invalid-feedback"></span>
+                        <?php if (!empty($errors)): ?>
+                        <?php foreach ($errors as $field => $error) : ?>
+                        <div class="btn btn-danger">
+                        <?= $error; ?>
+                        </div>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                     <button type="submit" id="submit" class="btn btn-primary">Save</button>
                     <button type="reset" class="btn btn-default">Reset</button>
@@ -20,4 +26,3 @@
     </div>
 </div><!-- /.col-->
 <?= $this->endSection() ?>
-								
