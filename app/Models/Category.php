@@ -22,8 +22,15 @@ class Category extends Model
     protected $updatedField = '';
     protected $deletedField = '';
 
-    protected $validationRules      = [];
-    protected $validationMessages   = [];
+    protected $validationRules      = [
+        'cat_name' => 'required|is_unique[categories.cat_name]',
+    ];
+    protected $validationMessages   = [
+        'cat_name' => [
+            'required' => 'The category name is required !',
+            'is_unique' => 'This category name exists. Please choose another',
+        ]
+    ];
     protected $skipValidation       = false;
 
 }
