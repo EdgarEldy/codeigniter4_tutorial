@@ -8,7 +8,7 @@
                 <form role="form" action="<?= base_url('categories/save') ?>" method="post">
                     <div class="form-group">
                         <label>Category name :</label>
-                        <input type="text" name="cat_name" class="form-control"
+                        <input type="text" name="category_name" class="form-control"
                                placeholder="" value="">
                         <?php if (!empty($errors)): ?>
                         <?php foreach ($errors as $field => $error) : ?>

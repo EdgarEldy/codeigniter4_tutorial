@@ -14,7 +14,7 @@ class Category extends Model
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['cat_name'];
+    protected $allowedFields = ['category_name'];
 
     protected $useTimestamps = false;
 
@@ -23,10 +23,10 @@ class Category extends Model
     protected $deletedField = '';
 
     protected $validationRules      = [
-        'cat_name' => 'required|is_unique[categories.cat_name]',
+        'category_name' => 'required|is_unique[categories.category_name]',
     ];
     protected $validationMessages   = [
-        'cat_name' => [
+        'category_name' => [
             'required' => 'The category name is required !',
             'is_unique' => 'This category name exists. Please choose another',
         ]

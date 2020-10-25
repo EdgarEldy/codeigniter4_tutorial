@@ -35,9 +35,9 @@ class CategoriesController extends Controller
 
     public function save()
     {
-        $cat_name = $this->request->getPost('cat_name');
+        $category_name = $this->request->getPost('category_name');
         $data = [
-            'cat_name' => $cat_name
+            'category_name' => $category_name
         ];
 
         if ($this->category->save($data) == false) {
@@ -62,9 +62,9 @@ class CategoriesController extends Controller
     {
         // code...
         $id = $this->request->getPost('id');
-        $cat_name = $this->request->getPost('cat_name');
+        $category_name = $this->request->getPost('category_name');
         $data = [
-            'cat_name' => $cat_name
+            'category_name' => $category_name
         ];
         $this->category->update($id, $data);
         return redirect('categories');

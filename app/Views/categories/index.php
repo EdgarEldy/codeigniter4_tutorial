@@ -20,7 +20,7 @@
                 <?php foreach ($categories as $category) :?>
                     <tr>
                         <td><?= $category['id']; ?> </td>
-                        <td><?= $category['cat_name']; ?></td>
+                        <td><?= $category['category_name']; ?></td>
                         <td>
                             <div class="card-footer">
                                 <a href="categories/edit/<?= $category['id']; ?>"

@@ -9,8 +9,8 @@
                     <input type="hidden" name="id" value="<?= $category['id'] ?>">
                     <div class="form-group">
                         <label>Product category</label>
-                        <input type="text" name="cat_name" class="form-control"
-                               placeholder="" value="<?= $category['cat_name']; ?>">
+                        <input type="text" name="category_name" class="form-control"
+                               placeholder="" value="<?= $category['category_name']; ?>">
                         <?php if (!empty($errors)): ?>
                             <?php foreach ($errors as $field => $error) : ?>
                                 <div class="btn btn-danger">
