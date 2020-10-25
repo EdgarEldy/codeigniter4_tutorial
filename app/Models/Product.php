@@ -20,8 +20,23 @@ class Product extends Model
     protected $updatedField = '';
     protected $deletedField = '';
 
-    protected $validationRules = [];
-    protected $validationMessages = [];
+    protected $validationRules    = [
+        'category_name' => 'required',
+        'product_name' => 'required',
+        'unit_price' => 'required',
+    ];
+    protected $validationMessages = [
+        'category_name' => [
+            'required' => 'The category name is required'
+        ],
+        'product_name' => [
+            'required' => 'The product name is required',
+            'is_unique' => 'This product name already exists. Please choose another',
+        ],
+        'unit_price' => [
+            'required' => 'The unit price is required'
+        ],
+    ];
     protected $skipValidation = false;
 
 }
