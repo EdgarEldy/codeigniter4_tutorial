@@ -22,7 +22,7 @@ class CustomersController extends Controller
     public function index()
     {
         $customers = $this->customer->findAll();
-        return view('customers/index',[
+        return view('customers/index', [
             'customers' => $customers
         ]);
     }
@@ -49,15 +49,20 @@ class CustomersController extends Controller
             'tel' => $tel,
             'address' => $address,
         ];
-        $this->customer->save($data);
-        return redirect('customers');
+        if ($this->customer->save($data) == false) {
+            return view('customers/add', [
+                'errors' => $this->customer->errors()
+            ]);
+        } else {
+            return redirect('customers');
+        }
     }
 
     public function edit($id)
     {
         # code...
         $customer = $this->customer->find($id);
-        return view('customers/edit',[
+        return view('customers/edit', [
             'customer' => $customer
         ]);
     }
@@ -79,7 +84,7 @@ class CustomersController extends Controller
             'tel' => $tel,
             'address' => $address,
         ];
-        $this->customer->update($id,$data);
+        $this->customer->update($id, $data);
         return redirect('customers');
     }
 
