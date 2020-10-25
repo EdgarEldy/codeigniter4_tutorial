@@ -35,6 +35,7 @@ class CreateOrdersTable extends Migration
             ]
         ]);
         $this->forge->addKey('id', TRUE);
+        $this->forge->addForeignKey('customer_id','customers','id','cascade','cascade');
         $this->forge->createTable('orders');
 
         $this->db->enableForeignKeyChecks();
