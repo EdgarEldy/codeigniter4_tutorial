@@ -20,13 +20,13 @@ class Product extends Model
     protected $updatedField = '';
     protected $deletedField = '';
 
-    protected $validationRules    = [
-        'category_name' => 'required',
+    protected $validationRules = [
+        'category_id' => 'required',
         'product_name' => 'required',
         'unit_price' => 'required',
     ];
     protected $validationMessages = [
-        'category_name' => [
+        'category_id' => [
             'required' => 'The category name is required'
         ],
         'product_name' => [
