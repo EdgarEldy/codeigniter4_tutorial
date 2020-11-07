@@ -2,15 +2,15 @@
 <?= $this->section('content') ?>
 <div class="col-lg-12">
     <div class="panel panel-default">
-        <div class="panel-heading">Update a product</div>
+        <div class="panel-heading"><a href="<?= base_url('products') ?>">Products</a> / Update a product</div>
         <div class="panel-body">
             <div class="col-md-6">
                 <form role="form" action="<?= base_url('products/update') ?>" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= $product['id'] ?>">
                     <div class="form-group">
-                        <label for="">Select a category :</label>
+                        <label for="">Category :</label>
                         <select name="category_id" id="" class="form-control">
-                            <option value="">Selectionner une categorie :</option>
+                            <option value="">Select</option>
                             <?php foreach ($categories as $category): ?>
                                 <option value="<?= $category['id'] ?>"><?= $category['category_name'] ?></option>
                             <?php endforeach; ?>
