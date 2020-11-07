@@ -12,7 +12,7 @@
                         <select name="category_id" id="" class="form-control">
                             <option value="">Selectionner une categorie :</option>
                             <?php foreach ($categories as $category): ?>
-                                <option value="<?= $category['id'] ?>"><?= $category['cat_name'] ?></option>
+                                <option value="<?= $category['id'] ?>"><?= $category['category_name'] ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
