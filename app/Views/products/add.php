@@ -7,11 +7,11 @@
                 <div class="col-md-6">
                     <form role="form" action="<?= base_url('products/save') ?>" method="POST">
                     <div class="form-group">
-                        <label for="">Select a category :</label>
+                        <label for="">Category :</label>
                         <select name="category_id" id="" class="form-control">
-                            <option value="">Selectionner une categorie :</option>
+                            <option value="">Select</option>
                             <?php foreach ($categories as $category): ?>
-                            <option value="<?= $category['id'] ?>"><?= $category['cat_name'] ?></option>
+                            <option value="<?= $category['id'] ?>"><?= $category['category_name'] ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
