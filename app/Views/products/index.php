@@ -22,7 +22,7 @@
                 <?php foreach($products->getResult('array') as $product): ?>
                 <tr>
                     <td><?= $product['id']; ?></td>
-                    <td><?= $product['cat_name']; ?></td>
+                    <td><?= $product['category_name']; ?></td>
                     <td><?= $product['product_name']; ?></td>
                     <td><?= $product['unit_price']; ?></td>
                     <td>
