@@ -2,7 +2,7 @@
 <?= $this->section('content') ?>
     <div class="col-lg-12">
         <div class="panel panel-default">
-            <div class="panel-heading">Add a product</div>
+            <div class="panel-heading"><a href="<?= base_url('products') ?>">Products</a> / Add a product</div>
             <div class="panel-body">
                 <div class="col-md-6">
                     <form role="form" action="<?= base_url('products/save') ?>" method="POST">
