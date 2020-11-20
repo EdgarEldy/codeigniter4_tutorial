@@ -54,6 +54,14 @@ $routes->get('products/edit/(:any)','ProductsController::edit/$1');
 $routes->post('products/update','ProductsController::update');
 $routes->post('products/delete/(:any)','ProductsController::delete/$1');
 
+//Orders
+$routes->get('orders','OrdersController::index');
+$routes->get('orders/add','OrdersController::add');
+$routes->post('orders/save','OrdersController::save');
+$routes->get('orders/edit/(:any)','OrdersController::edit/$1');
+$routes->post('orders/update','OrdersController::update');
+$routes->post('orders/delete/(:any)','OrdersController::delete/$1');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
