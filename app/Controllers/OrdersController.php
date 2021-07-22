@@ -49,4 +49,19 @@ class OrdersController extends Controller
             'categories' => $categories,
         ]);
     }
+
+    //Get products by category id
+    public function getProducts()
+    {
+        $id = $this->request->getGet('cat_id');
+        $builder = $this->db->table('categories');
+        $builder->select('*');
+        $builder->join('products', 'categories.id = products.category_id');
+        $builder->where('categories.id', $id);
+        $products = $builder->get();
+
+        return view('orders/getProducts',[
+            'products' => $products
+        ]);
+    }
 }
