@@ -17,7 +17,7 @@
                     </div>
                         <div class="form-group">
                             <label for="category">Category :</label>
-                            <select name="category_id" id="category_id" class="form-control">
+                            <select name="category_id" id="cat_id" class="form-control">
                                 <option value="">Select</option>
                                 <?php foreach ($categories as $category): ?>
                                     <option value="<?= $category['id'] ?>"><?= $category['category_name'] ?></option>
