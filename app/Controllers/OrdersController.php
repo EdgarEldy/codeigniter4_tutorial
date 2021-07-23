@@ -101,4 +101,55 @@ class OrdersController extends Controller
 
         return redirect('orders');
     }
+
+    //Get orders/edit view with data
+    public function edit($id)
+    {
+        //Get customers
+        $customers = $this->customer->findAll();
+
+        //Get categories
+        $categories = $this->category->findAll();
+
+        //Get customer by order id
+        $builder = $this->db->table('customers');
+        $builder->select('*');
+        $builder->join('orders', 'customers.id = orders.customer_id');
+        $builder->where('orders.id', $id);
+        $query = $builder->get();
+
+        $customer = $query->getRowArray(); 
+
+        //Get category name by order id
+        $builder = $this->db->table('categories');
+        $builder->select('*');
+        $builder->join('products', 'categories.id = products.category_id');
+        $builder->join('orders', 'products.id = orders.product_id');
+        $builder->where('orders.id', $id);
+        $query = $builder->get();
+
+        $category = $query->getRowArray();
+
+        //Get product name by order id
+        $builder = $this->db->table('products');
+        $builder->select('*');
+        $builder->join('orders', 'products.id = orders.product_id');
+        $builder->where('orders.id', $id);
+        $query = $builder->get();
+
+        $product = $query->getRowArray(); 
+
+        //Get order
+        $order = $this->order->find($id);
+
+        $product = $this->product->find($id);
+        return view('orders/edit', [
+            'customer' => $customer,
+            'category' => $category,
+            'customers' => $customers,
+            'categories' => $categories,
+            'product' => $product,
+            'order' => $order,
+        ]);
+    }
 }
