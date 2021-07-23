@@ -64,4 +64,21 @@ class OrdersController extends Controller
             'products' => $products
         ]);
     }
+
+    //Get unit price by product id
+    public function getUnitPrice()
+    {
+        $id = $this->request->getGet('product_id');
+        $builder = $this->db->table('categories');
+        $builder->select('*');
+        $builder->join('products', 'categories.id = products.category_id');
+        $builder->where('products.id', $id);
+        $query = $builder->get();
+
+        $product = $query->getRowArray();
+
+        return view('orders/getUnitPrice', [
+            'product' => $product
+        ]);
+    }
 }
