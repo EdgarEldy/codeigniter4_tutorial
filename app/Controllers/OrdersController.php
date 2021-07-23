@@ -81,4 +81,24 @@ class OrdersController extends Controller
             'product' => $product
         ]);
     }
+
+    //Save order
+    public function save()
+    {
+        $customer_id = $this->request->getPost('customer_id');
+        $product_id = $this->request->getPost('product_id');
+        $qty = $this->request->getPost('qty');
+        $total = $this->request->getPost('total');
+
+        $data = [
+            'customer_id' => $customer_id,
+            'product_id' => $product_id,
+            'qty' => $qty,
+            'total' => $total
+        ];
+
+        $this->order->save($data);
+
+        return redirect('orders');
+    }
 }
