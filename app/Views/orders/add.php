@@ -31,14 +31,14 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Quantity :</label>
-                            <input type="text" name="qty" id="qty" class="form-control"
+                            <label>Unit price :</label>
+                            <input type="text" name="unit_price" id="unit_price" class="form-control"
                                    placeholder="" value="">
                             <span class="invalid-feedback"></span>
                         </div>
                         <div class="form-group">
-                            <label>Unit price :</label>
-                            <input type="text" name="unit_price" id="unit_price" class="form-control"
+                            <label>Quantity :</label>
+                            <input type="text" name="qty" id="qty" class="form-control"
                                    placeholder="" value="">
                             <span class="invalid-feedback"></span>
                         </div>
