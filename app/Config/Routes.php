@@ -62,6 +62,7 @@ $routes->get('orders/edit/(:any)','OrdersController::edit/$1');
 $routes->post('orders/update','OrdersController::update');
 $routes->post('orders/delete/(:any)','OrdersController::delete/$1');
 $routes->get('orders/getProducts', 'OrdersController::getProducts');
+$routes->get('orders/getUnitPrice', 'OrdersController::getUnitPrice');
 
 /**
  * --------------------------------------------------------------------
