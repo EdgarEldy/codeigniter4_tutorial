@@ -31,8 +31,10 @@ class OrdersController extends Controller
     public function index()
     {
         $builder = $this->db->table('customers');
+        $builder->select('*');
         $builder->join('orders','orders.customer_id = customers.id');
         $builder->join('products','orders.product_id = products.id');
+        $builder->select('orders.*, orders.id as order_id');
         $orders = $builder->get();
 
         return view('orders/index',[
