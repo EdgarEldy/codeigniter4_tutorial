@@ -154,4 +154,26 @@ class OrdersController extends Controller
             'order' => $order,
         ]);
     }
+
+    //Update order
+    public function update()
+    {
+        $id = $this->request->getPost('id');
+
+        $customer_id = $this->request->getPost('customer_id');
+        $product_id = $this->request->getPost('product_id');
+        $qty = $this->request->getPost('qty');
+        $total = $this->request->getPost('total');
+
+        $data = [
+            'customer_id' => $customer_id,
+            'product_id' => $product_id,
+            'qty' => $qty,
+            'total' => $total
+        ];
+
+        $this->order->update($id, $data);
+
+        return redirect('orders');
+    }
 }
