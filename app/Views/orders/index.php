@@ -24,7 +24,7 @@
                 <tbody>
                 <?php foreach($orders->getResult('array') as $order): ?>
                 <tr>
-                    <td><?= $order['id']; ?></td>
+                    <td><?= $order['order_id']; ?></td>
                     <td><?= $order['first_name']; ?></td>
                     <td><?= $order['last_name']; ?></td>
                     <td><?= $order['product_name']; ?></td>
@@ -33,9 +33,9 @@
                     <td><?= $order['total']; ?></td>
                     <td>
                         <div class="card-footer">
-                            <a href="orders/edit/<?= $order['id']; ?>"
+                            <a href="orders/edit/<?= $order['order_id']; ?>"
                                class="btn btn-primary">Edit</a>
-                            <form action="orders/delete/<?= $order['id']; ?>" method="post">
+                            <form action="orders/delete/<?= $order['order_id']; ?>" method="post">
                                 <button type="submit" onclick="return confirm('Are you sure you want to delete this order ?')" class="btn btn-danger btn-sm">Delete</button>
                             </form>
 
