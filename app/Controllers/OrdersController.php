@@ -176,4 +176,11 @@ class OrdersController extends Controller
 
         return redirect('orders');
     }
+
+    //Remove an order
+    public function delete($id)
+    {
+        $this->order->delete($id);
+        return redirect('orders');
+    }
 }
