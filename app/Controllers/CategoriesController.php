@@ -69,6 +69,9 @@ class CategoriesController extends Controller
             'category_name' => $category_name
         ];
         $this->category->update($id, $data);
+
+        //Add flash message after updating product category
+        session()->setFlashdata('category_updated', 'Product category has been updated successfully !');
         return redirect('categories');
     }
 
