@@ -88,6 +88,9 @@ class CustomersController extends Controller
             'address' => $address,
         ];
         $this->customer->update($id, $data);
+
+        //Add flash message after updating customer
+        session()->setFlashdata('customer_updated', 'Customer has been updated successfully !');
         return redirect('customers');
     }
 
