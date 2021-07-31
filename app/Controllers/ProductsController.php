@@ -57,6 +57,8 @@ class ProductsController extends Controller
           'unit_price' => $unit_price
         ];
 
+        //Add flash message after saving product
+        session()->setFlashdata('product_saved', 'Product has been saved successfully !');
         $this->product->save($data);
 
         return redirect('products');
