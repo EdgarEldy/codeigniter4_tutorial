@@ -54,6 +54,9 @@ class CustomersController extends Controller
                 'errors' => $this->customer->errors()
             ]);
         } else {
+
+            //Add flash message after saving customer
+            session()->setFlashdata('customer_saved', 'Customer has been saved successfully !');
             return redirect('customers');
         }
     }
