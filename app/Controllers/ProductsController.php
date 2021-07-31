@@ -89,6 +89,8 @@ class ProductsController extends Controller
 
         $this->product->update($id, $data);
 
+        //Add flash message after updating product
+        session()->setFlashdata('product_updated', 'Product has been updated successfully !');
         return redirect('products');
     }
 
