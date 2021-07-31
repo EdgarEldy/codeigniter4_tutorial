@@ -101,6 +101,8 @@ class OrdersController extends Controller
 
         $this->order->save($data);
 
+        //Add flash message after saving order
+        session()->setFlashdata('order_saved', 'Order has been saved successfully !');
         return redirect('orders');
     }
 
