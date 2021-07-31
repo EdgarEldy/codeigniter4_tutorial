@@ -45,6 +45,8 @@ class CategoriesController extends Controller
                 'errors' => $this->category->errors()
             ]);
         } else {
+            //Add flash message after saving product category
+            session()->setFlashdata('category_saved', 'Product category has been saved successfully !');
             return redirect('categories');
         }
 
