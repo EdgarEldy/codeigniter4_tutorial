@@ -78,6 +78,9 @@ class CategoriesController extends Controller
     public function delete($id)
     {
         $this->category->delete($id);
+
+        //Add flash message after removing product category
+        session()->setFlashdata('category_deleted', 'Product category has been removed successfully !');
         return redirect('categories');
     }
 
