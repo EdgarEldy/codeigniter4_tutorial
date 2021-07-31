@@ -97,6 +97,9 @@ class ProductsController extends Controller
     public function delete($id)
     {
         $this->product->delete($id);
+
+        //Add flash message after removing product
+        session()->setFlashdata('product_deleted', 'Product has been deleted successfully !');
         return redirect('products');
     }
 }
