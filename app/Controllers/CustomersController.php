@@ -98,6 +98,9 @@ class CustomersController extends Controller
     {
         # code...
         $this->customer->delete($id);
+
+        //Add flash message after removing customer
+        session()->setFlashdata('customer_deleted', 'Customer has been deleted successfully !');
         return redirect('customers');
     }
 
