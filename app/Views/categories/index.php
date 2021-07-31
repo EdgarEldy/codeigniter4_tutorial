@@ -6,6 +6,8 @@
         <div class="panel-body">
             <?php if (session()->getFlashdata('category_saved')) : ?>
                 <?php echo '<p class="alert alert-success w-100 h-100">' . session()->getFlashdata('category_saved') . '</p>'; ?>
+            <?php elseif (session()->getFlashdata('category_updated')) : ?>
+                <?php echo '<p class="alert alert-success w-100 h-100">' . session()->getFlashdata('category_updated') . '</p>'; ?>
             <?php endif; ?>
             <a href="<?= base_url('categories/add') ?>" class="btn btn-primary">New</a>
             <table data-toggle="table" data-url="" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
