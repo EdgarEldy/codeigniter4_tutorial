@@ -13,4 +13,8 @@ class Profile extends Model
     protected $primaryKey = 'Id';
     protected $returnType = 'array';
 
+    // Set use soft delete to false
+    protected $useSoftDeletes = false;
+
+
 }
