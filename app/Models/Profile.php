@@ -16,5 +16,11 @@ class Profile extends Model
     // Set use soft delete to false
     protected $useSoftDeletes = false;
 
+    protected $useTimestamps = false;
+
+    protected $createdField = '';
+    protected $updatedField = '';
+    protected $deletedField = '';
+
 
 }
