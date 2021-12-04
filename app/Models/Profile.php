@@ -22,5 +22,15 @@ class Profile extends Model
     protected $updatedField = '';
     protected $deletedField = '';
 
-
+    // Add validations
+    protected $validationRules = [
+        'profile_name' => 'required|is_unique[profiles.profile_name]',
+    ];
+    protected $validationMessages = [
+        'profile_name' => [
+            'required' => 'The profile name is required !',
+            'is_unique' => 'This profile name exists. Please choose another',
+        ]
+    ];
+    protected $skipValidation = false;
 }
